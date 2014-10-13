@@ -1,2 +1,7 @@
 <h3>User</h3>
 <p>Email: <%= @user.email if @user.email %></p>
+<p>Gender: <%= @user.gender if @user.gender %></p>
+<p>Seeking Gender: <%= @user.seeking_gender if @user.seeking_gender %></p>
+<p>Age: <%= @user.age if @user.age %></p>
+
+<%= link_to 'Back', users_path %>
