@@ -3,5 +3,7 @@
 <p>Gender: <%= @user.gender if @user.gender %></p>
 <p>Seeking Gender: <%= @user.seeking_gender if @user.seeking_gender %></p>
 <p>Age: <%= @user.age if @user.age %></p>
+<p><%= image_tag @user.image_url.to_s %></p>
+
 
 <%= link_to 'Back', users_path %>
