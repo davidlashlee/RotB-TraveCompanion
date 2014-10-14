@@ -1,12 +1,8 @@
+	
 <p>
-  <strong>Name:</strong>
-  <%= @destination.name %>
+  <strong>Location:</strong>
+  <%= @location.name %>
 </p>
- 
-<p>
-  <strong>User ID:</strong>
-  <%= @destination.user_id %>
-</p> 
 
 <p>
   <strong>Start Date:</strong>
@@ -16,6 +12,11 @@
 <p>
   <strong>End Date:</strong>
   <%= @destination.end_date %>
+</p> 
+
+<p>
+  <strong>User ID:</strong>
+  <%= @destination.user_id %>
 </p> 
 
 <%= link_to 'Back', destinations_path %>
