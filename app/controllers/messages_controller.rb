@@ -5,8 +5,6 @@ class MessagesController < ApplicationController
 		@messages = Message.all
 	end
 
-<<<<<<< HEAD
-=======
 	def new
 		@message = Message.new
 		@user = User.all
@@ -17,7 +15,7 @@ class MessagesController < ApplicationController
 	def create
 		message_params
 		@message = Message.new(message_params)
->>>>>>> 3ac128a71181b6e48a0fb35f633bb3031a32a8eb
+
 
 		@message.save
 		redirect_to @message
