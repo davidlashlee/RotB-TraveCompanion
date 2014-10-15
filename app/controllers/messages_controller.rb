@@ -2,14 +2,13 @@ class MessagesController < ApplicationController
 	before_action :authenticate_user!
 
 def index
-	@message = Message.all
+	@messages = Message.all
 end
 
 def new
 	@message = Message.new
 	@message.sender = current_user.id
-	@message.save
-	end
+end
 
 def create
 	@message = Message.new(message_params)
