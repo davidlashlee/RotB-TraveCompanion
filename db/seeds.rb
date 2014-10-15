@@ -14,3 +14,4 @@ User.create(:email => "user5@mail.m", :password => "rubyruby", :password_confirm
 
 Destination.create(:location => "Bali", :start_date => "tmw", :end_date => "1 week")
 Destination.create(:location => "Java", :start_date => "tmw", :end_date => "1 week")
+
