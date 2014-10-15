@@ -6,6 +6,7 @@ class DestinationsController < ApplicationController
 
 	def new
 		@destination = Destination.new
+		@curr_user = current_user
 	end
 
 	def create
@@ -40,7 +41,7 @@ class DestinationsController < ApplicationController
 	end
 
 	private
-	def tour_params
+	def destination_params
 		params.require(:destination).permit(:location,:start_date,:end_date,:user_id)
 	end
 

@@ -26,8 +26,7 @@
   </p>
 
   <p>
-    <%= f.label :User_id %><br>
-    <%= f.text_field :user_id %>
+    <%= f.hidden_field :user_id, :value => @curr_user.id %>
   </p>
 
   <p>
