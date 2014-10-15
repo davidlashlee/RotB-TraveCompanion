@@ -14,11 +14,18 @@
 ActiveRecord::Schema.define(version: 20141014063208) do
 
   create_table "destinations", force: true do |t|
+<<<<<<< HEAD
     t.string  "location"
     t.string  "start_date"
     t.string  "end_date"
     t.integer "user_id"
   end
+=======
+    t.string   "location"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "user_id"
+>>>>>>> f3c463ec561e96c0e1ef260827d9edc0816936f0
 
   create_table "messages", force: true do |t|
     t.integer  "reciever_id"
