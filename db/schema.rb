@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20141014063208) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer  "user_id"
+  end
 
   create_table "messages", force: true do |t|
     t.integer  "reciever_id"
