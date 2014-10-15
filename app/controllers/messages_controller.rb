@@ -15,7 +15,6 @@ class MessagesController < ApplicationController
 	def create
 		message_params
 		@message = Message.new(message_params)
-
 		@message.save
 		redirect_to @message
 	end

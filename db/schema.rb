@@ -18,7 +18,10 @@ ActiveRecord::Schema.define(version: 20141014063208) do
     t.string  "start_date"
     t.string  "end_date"
     t.integer "user_id"
-  end
+    t.string   "location"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "user_id"
 
   create_table "messages", force: true do |t|
     t.integer  "reciever_id"
