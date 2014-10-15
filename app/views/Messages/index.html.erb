@@ -2,30 +2,35 @@
 
 <div class="container">
 	<div class="row">
-	<div class="col-md-6">
-<h1> Message Dashboard</h1>
-<%= link_to "new messages", new_message_path %>
-<table class= "table table-hover">
-  <tr>
-    <th>Sender</th>
-    <th>Receiver</th>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
- <% @messages.each do |msg| %>
-	<tr>
-		<% if msg.reciever_id == current_user.id %>
-		    <td><%= msg.sender.email %></td>
-		    <td><%= msg.reciever.email %> </td>
-		    <td><%= link_to "#{msg.title}", message_path(msg.id) %></td>
-		    <td><%= msg.message_text %> </td>
-	    <% end %>
-    </tr>
-<% end %>
+		<div class="col-md-6">
+		<h1> Message Dashboard</h1>
+		<%= link_to "new messages", new_message_path %>
+		<table class= "table table-bordered table-hover">
+		  <thead>
+		  <tr>
+		    <th>Sender</th>
+		    <th>Title</th>
+		    <th>Text</th>
+		  </tr>
+		  <tbody>
+		<% @messages.each do |msg| %>
+			<tr class="success">
+				<% if msg.reciever_id == current_user.id %>
+				    <td><%= msg.sender.email %></td>
+				    <td><%= link_to "#{msg.title}", message_path(msg.id) %></td>
+				    <td><%= msg.message_text %> </td>
+			</tr>
+			</tbody>
+		<% end %>
+
+		 
+
+		  </tr>
+		<% end %>
 
 </table>
 </div>
-<div class="col-md-6"></div>
+		<div class="col-md-4">
 </div>
 	
 
