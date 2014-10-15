@@ -1,9 +1,16 @@
-<h3>User</h3>
+<h3>My Profile</h3>
 <p>Email: <%= @user.email if @user.email %></p>
 <p>Gender: <%= @user.gender if @user.gender %></p>
 <p>Seeking Gender: <%= @user.seeking_gender if @user.seeking_gender %></p>
 <p>Age: <%= @user.age if @user.age %></p>
-<p><%= image_tag @user.image_url.to_s %></p>
+
+<% if !@user.image.present? %>
+	<h3>Add a picture PLEASE!</h3>
+<% else %>
+	<p><%= image_tag(@user.image_url, :width => 600)%></p>
+<% end %>
 
 
-<%= link_to 'Back', users_path %>
+
+
+<h2><%= link_to 'Back', users_path %></h2>
