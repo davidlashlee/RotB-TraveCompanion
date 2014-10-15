@@ -1,40 +1,27 @@
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  </head>
+<h1>Users</h1>
 
-  <body>
-    <div class="container">
-      <h1>Travel Tinder</h1>
-      <p>People Looking Traveling Companions</p>      
-      <div class="row">
-        <div class="col-sm-6" style="background-color:lavender;">
-          <p> <% @users.each do |u| %>
-          <ul>
-            <l1>
-            <%= image_tag u.image_url(:small_image).to_s %>
-            <%= u.email %>
-            <%= u.age %>
-            <%= u.gender %>
-            <%= u.seeking_gender %>
-            <%= link_to "Ask em to Travel!", new_message_path %>
-            </l1>
-          </ul>
-          </p>
-          <% end %>
-            
-        </div>
-        <div class="col-sm-6" style="background-color:lavenderblush;">
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        </div>
-      </div>
-    </div>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  </body>
-</html>
+<h4><%= link_to 'New Destinations', new_destination_path %> | <%= link_to 'Users', users_path %> | <%= link_to 'Messaging', messages_path %></h4> <br><br>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Gender</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr class="success">
+      <% if user.id != current_user.id %>
+        <td><%= user.email %></td>
+        <td><%= user.gender %> </td>
+        <td><%= user.age %> </td>
+        <td><%= link_to 'Send message', new_message_path(user.id) %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table> 
 

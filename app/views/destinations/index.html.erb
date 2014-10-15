@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Listing Destinations</h1>
  <%= link_to "Where are you going?", new_destination_path %>
 
@@ -11,7 +12,22 @@
   </tr>
  
   <% @destinations.each do |destination| %>
+=======
+<h3>Listing Destinations</h1>
+
+<table class="table table-striped table-hover ">
+  <thead>
+>>>>>>> a1f80439b2b485a4e0f40dd7f3a15296064a39c1
     <tr>
+      <th>Location</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>User ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @destinations.each do |destination| %>
+    <tr class="success">
       <td><%= destination.location %></td>
       <td><%= destination.start_date %> </td>
       <td><%= destination.end_date %> </td>
@@ -21,5 +37,6 @@
       <td><%= link_to 'Destroy', destination_path(destination), method: :delete, data: { confirm: 'Sure?' } %></td>
     </tr>
   <% end %>
+  </tbody>
+</table> 
 
-</table>
