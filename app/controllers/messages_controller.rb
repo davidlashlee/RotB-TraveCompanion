@@ -27,6 +27,7 @@ end
 
 def edit
 		@message = Message.find(params[:id])
+		@user = User.all
 	end
 
 def update

@@ -1,4 +1,12 @@
-<h1> Message Dashboard<h1>
+<h1> Message Dashboard</h1>
+
+<% @message.each do |mes| %>
+<% if mes.reciever_id == current_user.id %>
+<p><%= mes.sender.email %> 
+<%= link_to "#{mes.title}", message_path(mes.id) %>
+<p/>
+<% end %>
+<% end %>
 
 
 <%= link_to "new messages", new_message_path %>

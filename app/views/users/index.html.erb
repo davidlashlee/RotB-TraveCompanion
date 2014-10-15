@@ -7,12 +7,24 @@
 
   <body>
     <div class="container">
-      <h1>Hello World!</h1>
-      <p>Resize the browser window to see the effect.</p>      
+      <h1>Travel Tinder</h1>
+      <p>People Looking Traveling Companions</p>      
       <div class="row">
         <div class="col-sm-6" style="background-color:lavender;">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p> <% @users.each do |u| %>
+          <ul>
+            <l1>
+            <%= image_tag u.image_url(:small_image).to_s %>
+            <%= u.email %>
+            <%= u.age %>
+            <%= u.gender %>
+            <%= u.seeking_gender %>
+            <%= link_to "Ask em to Travel!", new_message_path %>
+            </l1>
+          </ul>
+          </p>
+          <% end %>
+            
         </div>
         <div class="col-sm-6" style="background-color:lavenderblush;">
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
