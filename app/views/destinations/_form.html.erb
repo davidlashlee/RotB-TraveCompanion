@@ -1,33 +1,23 @@
 <%= form_for @destination do |f| %>
-  <% if @destination.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@destination.errors.count, "error") %> prohibited
-      this destination from being saved:</h2>
-    <ul>
-    <% @destination.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
+
   <p>
-    <%= f.label :Destination %><br>
-    <%= f.text_field :destination_name %>
+    <%= f.label :Location %><br>
+    <%= f.text_field :location %>
   </p>
  
   <p>
-    <%= f.label :User_id %><br>
-    <%= f.text_field :user_id %>
-  </p>
- 
- <p>
     <%= f.label :Start_date %><br>
     <%= f.text_field :start_date %>
   </p>
-
-  <p>
+ 
+ <p>
     <%= f.label :End_date %><br>
     <%= f.text_field :end_date %>
+  </p>
+
+  <p>
+    <%= f.label :User_id %><br>
+    <%= f.text_field :user_id %>
   </p>
 
   <p>

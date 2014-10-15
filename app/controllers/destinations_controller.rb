@@ -9,7 +9,9 @@ class DestinationsController < ApplicationController
 	end
 
 	def create
+		# puts destination_params
 		@destination = Destination.new(destination_params)
+		# puts destination_params
 		@destination.save
 		redirect_to @destination
 	end
@@ -40,8 +42,8 @@ class DestinationsController < ApplicationController
 	end
 
 	private
-	def tour_params
-		params.require(:destination).permit(:name,:user_id,:start_date, :end_date)
+	def destination_params
+		params.require(:destination).permit(:location,:start_date,:end_date,:user_id)
 	end
 
 end
