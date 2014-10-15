@@ -7,10 +7,13 @@ end
 
 def new
 	@message = Message.new
-	@message.sender = current_user.id
-end
+	@user = User.all
+	@message.sender_id = current_user.id
+	@message.save
+	end
 
 def create
+	message_params
 	@message = Message.new(message_params)
 
 	@message.save
@@ -38,7 +41,7 @@ end
 
 private
 def message_params
-	params.require(:message).permit(:reciever,:sender,:title,:message_text)
+	params.require(:message).permit(:reciever_id,:sender_id,:title,:message_text)
 
 	
 end
