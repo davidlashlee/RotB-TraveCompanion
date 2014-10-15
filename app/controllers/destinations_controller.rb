@@ -41,7 +41,7 @@ class DestinationsController < ApplicationController
 
 	private
 	def tour_params
-		params.require(:destination).permit(:name,:user_id,:start_date, :end_date)
+		params.require(:destination).permit(:location,:start_date,:end_date,:user_id)
 	end
 
 end

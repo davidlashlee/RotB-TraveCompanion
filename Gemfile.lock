@@ -66,7 +66,7 @@ GEM
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.1)
-    mini_magick (3.8.0)
+    mini_magick (3.8.1)
       subexec (~> 0.2.1)
     minitest (5.4.2)
     multi_json (1.10.1)
