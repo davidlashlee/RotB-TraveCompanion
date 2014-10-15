@@ -1,4 +1,6 @@
-<%= form_for @message do |f| %>
+ <div class="container">
+  <div class="row">
+    <div class="col-md-6"><%= form_for @message do |f| %>
   <p>
     <%= f.label :reciever_id %><br>
    <%= f.select :reciever_id, options_for_select(@user.collect{ |c| [c.email, c.id] }, f.object.reciever_id)%>
@@ -16,4 +18,7 @@
     <%= f.submit %>
   </p>
 <% end %>
+</div>
+</div>
+</div>
 

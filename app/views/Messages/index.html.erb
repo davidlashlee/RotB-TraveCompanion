@@ -1,5 +1,9 @@
-<h1> Message Dashboard</h1>>
 
+<div class="container">
+	<div class="row">
+	<div class="col-md-6">
+<h1> Message Dashboard</h1>
+<%= link_to "new messages", new_message_path %>
 <table>
   <tr>
     <th>Sender</th>
@@ -19,6 +23,9 @@
 <% end %>
 
 </table>
+</div>
+<div class="col-md-6"></div>
+</div>
+	
 
 
-<%= link_to "new messages", new_message_path %>
