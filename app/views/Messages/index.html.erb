@@ -1,4 +1,26 @@
-<h1> Message Dashboard<h1>
+<h3> Message Dashboard<h3>
 
+<table class="table table-striped table-hover ">
+  <thead>
+	  <tr>
+	    <th>Sender</th>
+	    <th>Receiver</th>
+	    <th>Title</th>
+	    <th>Text</th>
+	  </tr>
+  </thead>
+  <tbody>
+	     <% @messages.each do |msg| %>
+		<tr class="success">
+			<% if msg.reciever == current_user.id %>
+			    <td><%= msg.sender %></td>
+			    <td><%= msg.reciever %> </td>
+			    <td><%= msg.title %> </td>
+			    <td><%= msg.message_text %> </td>
+		    <% end %>
+	    </tr>
+	    <% end %>
+  </tbody>
+</table> 
 
 <%= link_to "new messages", new_message_path %>

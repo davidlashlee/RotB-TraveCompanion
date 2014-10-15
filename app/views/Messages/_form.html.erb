@@ -1,9 +1,8 @@
 <%= form_for @message do |f| %>
   <p>
-    <%= f.label :reciever %><br>
-    <%= f.text_field :reciever %>
-  </p>
-
+    <%= f.label :reciever_id %><br>
+   <%= f.select :reciever_id, options_for_select(@user.collect{ |c| [c.email, c.id] }, f.object.reciever_id)%>
+   </p>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>

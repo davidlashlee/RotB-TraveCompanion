@@ -6,6 +6,7 @@ class DestinationsController < ApplicationController
 
 	def new
 		@destination = Destination.new
+		@curr_user = current_user
 	end
 
 	def create
