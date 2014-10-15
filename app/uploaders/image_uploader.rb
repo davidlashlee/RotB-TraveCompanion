@@ -47,7 +47,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
   version :small_image do
     # returns a 35x35 image
-    process :resize_to_fill => [35, 35]
+    process :resize_to_fill => [45, 45]
   end
 
   # Create different versions of your uploaded files:

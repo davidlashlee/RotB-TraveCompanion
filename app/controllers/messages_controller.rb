@@ -11,6 +11,10 @@ def new
 	@message.sender_id = current_user.id
 	@message.save
 	end
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2d8d02f6f5f6fe94cec745456b8c826473cd0e45
 
 def create
 	message_params
@@ -27,6 +31,7 @@ end
 
 def edit
 		@message = Message.find(params[:id])
+		@user = User.all
 	end
 
 def update
