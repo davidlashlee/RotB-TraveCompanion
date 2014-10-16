@@ -37,7 +37,7 @@ gem "mini_magick"
 # file upload solution
 gem 'carrierwave'
 
-gem 'bootstrap_form'
+# gem 'bootstrap_form' (sqlite3 dependency stupid mother f)
 
 # twitter bootstrap css & javascript toolkit
 gem 'twitter-bootswatch-rails', '~> 3.2.0'
