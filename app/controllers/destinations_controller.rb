@@ -2,6 +2,7 @@ class DestinationsController < ApplicationController
 
 	def index
 		@destinations = Destination.all
+		@curr_user = current_user
 	end
 
 	def new
