@@ -2,6 +2,7 @@ class DestinationsController < ApplicationController
   before_filter :authenticate_user!
 	def index
 		@destinations = Destination.all
+		@curr_user = current_user
 	end
 
 	def new
