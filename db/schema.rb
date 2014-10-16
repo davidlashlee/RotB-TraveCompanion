@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20141014063208) do
 
   create_table "destinations", force: true do |t|
     t.string  "location"
-    t.string  "start_date"
-    t.string  "end_date"
+    t.date    "start_date"
+    t.date    "end_date"
     t.integer "user_id"
   end
 

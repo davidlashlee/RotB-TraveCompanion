@@ -23,7 +23,7 @@
         <td><%= user.email %></td>
         <td><%= user.gender %> </td>
         <td><%= user.age %> </td>
-        <td><%= user.destinations.last %></td>
+        <td><%= user.destinations.last.location %></td>
         <td><%= link_to 'Send message', new_message_path(user.id) %></td>
       <% end %>
     </tr>

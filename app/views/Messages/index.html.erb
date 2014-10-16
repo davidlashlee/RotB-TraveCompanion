@@ -3,38 +3,6 @@
 
 <div class="container">
 	<div class="row">
-	<div class="col-md-6">
-<h1> Message Dashboard</h1>
-<%= link_to "new messages", new_message_path %>
-<table>
-
-
-
-	<tbody>
-		<tr>
-			<th>Sender</th>
-			<th>Receiver</th>
-			<th>Title</th>
-			<th>Text</th>
-		</tr>
-		<% @messages.each do |msg| %>
-			<%= puts msg.reciever.class %>
-			<% if msg.reciever_id == current_user.id %>
-				<tr class="success">
-				    <td><%= msg.sender.email %></td>
-				    <td><%= msg.reciever.email %> </td>
-				    <td><%= link_to "#{msg.title}", message_path(msg.id) %></td>
-				    <td><%= msg.message_text %> </td>
-				</tr>
-			<% end %>
-	    <% end %>
-	</tbody>
-
-</table> 
-
-
-<div class="container">
-	<div class="row">
 		<div class="col-md-6">
 			<h1> <FONT COLOR="white">Message Dashboard</FONT></h1>
 			<%= link_to "new messages", new_message_path %>
