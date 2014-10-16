@@ -15,3 +15,5 @@ User.create(:email => "user5@mail.m", :password => "rubyruby", :password_confirm
 Destination.create(:location => "Bali", :start_date => "tmw", :end_date => "1 week")
 Destination.create(:location => "Java", :start_date => "tmw", :end_date => "1 week")
 
+Message.create(:reciever_id => 14, :sender_id => 15, :title => "title", :message_text => "body")
+Message.create(:reciever_id => 14, :sender_id => 15, :title => "title2", :message_text => "body2")

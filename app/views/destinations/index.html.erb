@@ -1,6 +1,7 @@
  <div class="container">
   <div class="row">
     <div class="col-md-6">
+<<<<<<< HEAD
       <h1 style="color: white;">Listing Destinations</h1>
         <a href="destinations/new" class="btn btn-default">New Destination</a>
         <table class="table table-striped table-hover ">
@@ -24,6 +25,36 @@
             <% end %>
           </tbody>
         </table> 
+=======
+
+      <% if @curr_user.destinations.count == 0 %>
+        <h3>Add your destination</h3>
+      <% else %>
+        <h3>Listing Destinations</h1>
+          <%= link_to "Where are you going?", new_destination_path %>
+          <table class="table table-striped table-hover ">
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @curr_user.destinations.each do |destination| %>
+                <tr class="success">
+                  <td><%= destination.location %></td>
+                  <td><%= destination.start_date %> </td>
+                  <td><%= destination.end_date %> </td>
+                  <td><button type="button" class="btn btn-default"><%= link_to 'Show', destination_path(destination) %></button></td>
+                  <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_destination_path(destination) %></button></td>
+                  <td><button type="button" class="btn btn-default"><%= link_to 'Destroy', destination_path(destination), method: :delete, data: { confirm: 'Sure?' } %></button></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table> 
+        <% end %>
+>>>>>>> dd607f2520bd648596708444de12500c3f118225
       </div>
     </div>
   </div>
