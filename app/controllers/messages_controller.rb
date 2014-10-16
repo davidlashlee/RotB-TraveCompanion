@@ -15,11 +15,10 @@ class MessagesController < ApplicationController
 	def create
 		message_params
 		@message = Message.new(message_params)
-<<<<<<< HEAD
 
 
-=======
->>>>>>> d83afb6c2c51c2a303d05c4d2b87ddbe8b5fbc46
+
+
 		@message.save
 		redirect_to @message
 	end
