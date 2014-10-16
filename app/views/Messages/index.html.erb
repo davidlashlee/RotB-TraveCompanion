@@ -1,5 +1,6 @@
 <html style="
-  background: url(http://cdn0.dailydot.com/uploaded/images/original/2013/2/28/followgram8.jpg) no-repeat center center fixed;  
+  background: url(http://cdn0.dailydot.com/uploaded/images/original/2013/2/28/followgram8.jpg) no-repeat center center fixed;
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -9,11 +10,11 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-offset-6">
-			<h1> <FONT COLOR="white">Message Dashboard</FONT></h1>
-			<%= link_to "new messages", new_message_path %>
-			<table class= "table table-bordered table-hover">
-				<thead>
+		<div class="col-md-6" style="background-color: :white;">
+			<h1 style=" color: white; text-shadow: black 0.1em 0.1em 0.2em; ">Message Dashboard</FONT></h1>
+			<a href="messages/new" class="btn btn-default">New Message</a>
+			<table class= "table table-bordered table-hover" style="background-color:rgba(169, 239, 31, .7);text-shadow: black 0.1em 0.1em 0.2em;">
+				<thead style="color: white; background-color: black">
 					<tr>
 						<th>Sender</th>
 						<th>Title</th>
@@ -22,7 +23,7 @@
 				</thead>
 				<tbody >
 					<% @messages.each do |msg| %>
-					<tr class="success" >
+					<tr  >
 						<% if msg.reciever_id == current_user.id %>
 						<td><%= msg.sender.email %></td>
 						<td><%= link_to "#{msg.title}", message_path(msg.id) %></td>

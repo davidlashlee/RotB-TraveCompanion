@@ -6,8 +6,8 @@
         <h3>You don't have any friends</h3>
       <% else %>
         <h3>Listing Destinations</h1>
-          <table class="table table-striped table-hover ">
-            <thead>
+          <table class="table table-hover opyellow">
+            <thead style="text-color: white; background-color: black;">
               <tr>
                 <th>Location</th>
                 <th>Email</th>
@@ -18,7 +18,7 @@
             </thead>
             <tbody>
               <% @destinations.each do |dst| %>
-                <tr class="success">
+                <tr>
                   <td><%= dst.location %></td>
                   <td><%= User.find(dst.user_id).email %> </td>
                   <td><%= dst.start_date %></td>
