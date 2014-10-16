@@ -1,5 +1,5 @@
 class DestinationsController < ApplicationController
-
+  before_filter :authenticate_user!
 	def index
 		@destinations = Destination.all
 	end
