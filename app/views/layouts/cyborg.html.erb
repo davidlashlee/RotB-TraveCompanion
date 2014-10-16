@@ -17,43 +17,58 @@
       <%= yield(:page_stylesheet) if content_for?(:page_stylesheet) %>
 
     </head>
-    <body>
-
-      <%= yield %>
-
+    <body >
       <!-- Fixed navbar -->
-      <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <p class="navbar-brand"><button type="button" class="btn btn-success"><%= link_to "Home", root_path %></button></p>
-            <% if current_user %>
-
-            <p class="navbar-brand"><button type="button" class="btn btn-success"><%= link_to "Add Destination", destinations_path %></button></p>
-            <p class="navbar-brand"><button type="button" class="btn btn-success"><%= link_to "My Messages", messages_path %></button></p>
-            <p class="navbar-brand"><button type="button" class="btn btn-success"><%= link_to "My Profile", user_path(current_user.id) %></button></p>
-
-            <% end %>
-
-          </div>
-
-          <div class="navbar-text pull-right">
-            <% if user_signed_in? %>
-            Logged in as <strong><%= current_user.email %></strong>.
-            <br>
-            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-            <% else %>
-            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-            <% end %>
-          </div>
+      <div class="navbar navbar-default" >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Travel <FONT COLOR="#BF1919"> ♥ </FONT>Tinder</a>
         </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Active</a></li>
+            <li><%= link_to '| Home |', "/" %></a></li>
+            <li><%= link_to '| Messages |', messages_path %></li>
+            <li><%= link_to '| Destinations |', destinations_path %></li>
+            
+              </ul>
+            </li>
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <% if user_signed_in? %>
+                Logged in as <strong><%= current_user.email %></strong>
+                <% else %>
+                Sign Up! / Login
+                <% end %>
+
+                <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <% if user_signed_in? %>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                  <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+                  <% else %>
+                  <li><%= link_to "Sign up", new_user_registration_path%></li>
+                  <li><%= link_to "Login", new_user_session_path %></li>
+                  <% end %>
+                </ul>
+              </li>
+            </ul>
+
+          </div>
       </div>
+
+
+
+
+
+        <%= yield %>
 
 
 

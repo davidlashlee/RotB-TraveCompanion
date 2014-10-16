@@ -1,11 +1,20 @@
-<h2>Log in</h2>
-	
-<%= bootstrap_form_for(@user, url: session_path(resource_name)) do |f| %>
-  <%= f.email_field :email %>
-  <%= f.password_field :password %>
-  <%= f.check_box :remember_me %>
-  <%= f.submit "Log In" %>
-<% end %> 
+ <div class="container">
+ 	<div class="row">
+ 		<div class="col-md-6" style="background-color: white; opacity: .75; border: 2px solid;
+    border-radius: 25px;">
+ 			<h2>Log in</h2>
+
+ 			<%= bootstrap_form_for(@user, url: session_path(resource_name)) do |f| %>
+ 			<%= f.email_field :email %>
+ 			<%= f.password_field :password %>
+ 			<%= f.check_box :remember_me %>
+ 			<%= f.submit "Log In" %>
+ 			<% end %> 
 
 
-<%= render "devise/shared/links" %>
+ 			<%= render "devise/shared/links" %>
+
+
+ 		</div>
+ 	</div>
+ </div>

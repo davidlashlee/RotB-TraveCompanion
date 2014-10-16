@@ -2,7 +2,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-6">
-			<h1> Message Dashboard</h1>
+			<h1> <FONT COLOR="white">Message Dashboard</FONT></h1>
 			<%= link_to "new messages", new_message_path %>
 			<table class= "table table-bordered table-hover">
 				<thead>
@@ -12,9 +12,9 @@
 						<th>Text</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody >
 					<% @messages.each do |msg| %>
-					<tr class="success">
+					<tr class="success" >
 						<% if msg.reciever_id == current_user.id %>
 						<td><%= msg.sender.email %></td>
 						<td><%= link_to "#{msg.title}", message_path(msg.id) %></td>

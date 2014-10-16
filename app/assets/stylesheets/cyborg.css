@@ -4,3 +4,13 @@
  *= require cyborg/loader
  *= require cyborg/bootswatch
 */
+
+
+html { 
+  background: url(http://assets.nydailynews.com/polopoly_fs/1.1275868.1362080635!/img/httpImage/image.jpg_gen/derivatives/gallery_1200/traveling-couple-austria.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
