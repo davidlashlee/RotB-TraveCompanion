@@ -1,0 +1,27 @@
+ <div class="container">
+  <div class="row">
+    <div class="col-md-4" style="background-color: white; opacity: .75; border: 2px solid; text-color: white;
+    border-radius: 15px; color: black;">
+
+    <%= form_for @message, :class => 'form_group' do |f| %>
+  <p>
+    <%= f.label :reciever_id %><br>
+   <%= f.select :reciever_id, options_for_select(@user.collect{ |c| [c.email, c.id] }, f.object.reciever_id)%>
+   </p>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+    <p>
+    <%= f.label :message_text %><br>
+    <%= f.text_area :message_text %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+</div>
+</div>
+</div>
+
