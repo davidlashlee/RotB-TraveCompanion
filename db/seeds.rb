@@ -5,15 +5,24 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'open-uri'
+require 'json'
 
-User.create(:email => "user1@mail.m", :password => "rubyruby", :password_confirmation => "rubyruby", :gender => "male", :seeking_gender => "female", :age => 44)
-User.create(:email => "user2@mail.m", :password => "rubyruby", :password_confirmation => "rubyruby", :gender => "male", :seeking_gender => "female", :age => 44)
-User.create(:email => "user3@mail.m", :password => "rubyruby", :password_confirmation => "rubyruby", :gender => "female", :seeking_gender => "male", :age => 44)
-User.create(:email => "user4@mail.m", :password => "rubyruby", :password_confirmation => "rubyruby", :gender => "female", :seeking_gender => "male", :age => 44)
-User.create(:email => "user5@mail.m", :password => "rubyruby", :password_confirmation => "rubyruby", :gender => "female", :seeking_gender => "male", :age => 44)
+content = open("https://raw.githubusercontent.com/mledoze/countries/master/countries.json").read
+js = JSON.parse(content)
 
-Destination.create(:location => "Bali", :start_date => "tmw", :end_date => "1 week")
-Destination.create(:location => "Java", :start_date => "tmw", :end_date => "1 week")
+js.each do |a|
+  Country.create(:name => a['name']['common'], :symbol => a['altSpellings'][0])
+end
 
-Message.create(:reciever_id => 14, :sender_id => 15, :title => "title", :message_text => "body")
-Message.create(:reciever_id => 14, :sender_id => 15, :title => "title2", :message_text => "body2")
+# User.create(:email => "user1@mail.m", :password => "rubyruby", :password_confirmation => "rubyruby", :gender => "male", :seeking_gender => "female", :age => 44)
+# User.create(:email => "user2@mail.m", :password => "rubyruby", :password_confirmation => "rubyruby", :gender => "male", :seeking_gender => "female", :age => 44)
+# User.create(:email => "user3@mail.m", :password => "rubyruby", :password_confirmation => "rubyruby", :gender => "female", :seeking_gender => "male", :age => 44)
+# User.create(:email => "user4@mail.m", :password => "rubyruby", :password_confirmation => "rubyruby", :gender => "female", :seeking_gender => "male", :age => 44)
+# User.create(:email => "user5@mail.m", :password => "rubyruby", :password_confirmation => "rubyruby", :gender => "female", :seeking_gender => "male", :age => 44)
+
+# Destination.create(:location => "Bali", :start_date => "tmw", :end_date => "1 week")
+# Destination.create(:location => "Java", :start_date => "tmw", :end_date => "1 week")
+
+# Message.create(:reciever_id => 14, :sender_id => 15, :title => "title", :message_text => "body")
+# Message.create(:reciever_id => 14, :sender_id => 15, :title => "title2", :message_text => "body2")
