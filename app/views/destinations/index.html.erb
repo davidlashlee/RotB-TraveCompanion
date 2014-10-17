@@ -33,7 +33,7 @@
             <td><button type="button" class="btn btn-default"><%= link_to 'Show', destination_path(destination) %></button></td>
             <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_destination_path(destination) %></button></td>
             <td><button type="button" class="btn btn-default"><%= link_to 'Destroy', destination_path(destination), method: :delete, data: { confirm: 'Sure?' } %></button></td>
-            <td> <%= destination.user.email %> </td>
+            
           </tr>
           <% end %>
         </tbody>
