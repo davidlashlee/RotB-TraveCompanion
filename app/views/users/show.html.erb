@@ -1,6 +1,7 @@
-<div class="container">
+
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-sm-6">
 			<h3>My Profile</h3>
 			<p>Email: <%= @user.email if @user.email %></p>
 			<p>Gender: <%= @user.gender if @user.gender %></p>
@@ -16,3 +17,22 @@
 		<div class="col-md-6"></div>
 	</div>
 </div>
+
+
+<h3>My Profile</h3>
+<p>Email: <%= @user.email if @user.email %></p>
+<p>Gender: <%= @user.gender if @user.gender %></p>
+<p>Seeking Gender: <%= @user.seeking_gender if @user.seeking_gender %></p>
+<p>Age: <%= @user.age if @user.age %></p>
+
+<% if !@user.image.present? %>
+	<h3>Add a picture PLEASE!</h3>
+<% else %>
+	<p><%= image_tag(@user.image_url, :width => 600)%></p>
+<% end %>
+
+
+
+
+<h2><%= link_to 'Back', users_path %></h2>
+

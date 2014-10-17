@@ -29,6 +29,8 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+gem 'json'
+
 #gem 'bootstrap-sass'
 
 # for aws cloud storage

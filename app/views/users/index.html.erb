@@ -1,3 +1,4 @@
+
 <html style="
 background: url(http://media2.s-nbcnews.com/i/MSNBC/Components/Video/2014/01_January/140104/tdy_photog_140104.jpg) no-repeat center center fixed;  
 -webkit-background-size: cover;
@@ -25,7 +26,13 @@ background-size: cover;">
       <tr>
         <% if user.id != current_user.id %>
         <td><%= user.email %></td>
-        <td><%= user.gender %> </td>
+
+          <td><% if  user.gender == "male"  %>
+          <%= image_tag("female.png")%> 
+          <% elsif user.gender == "female" %>
+          <%= image_tag("male.png")%></td>
+          <% end %>
+
         <td><%= user.age %> </td>
         <% unless user.destinations.count == 0 %>
         <td><%= user.destinations.last.location %></td>
@@ -41,7 +48,6 @@ background-size: cover;">
 </div>
 </div>
 </div>
-
 
 
 

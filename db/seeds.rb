@@ -5,6 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'open-uri'
+require 'json'
+
+content = open("https://raw.githubusercontent.com/mledoze/countries/master/countries.json").read
+js = JSON.parse(content)
+js.each do |a|
+  Country.create!(:name => a['name'], :symbol => a['code'])
+end
 
 User.create(:email => "user1@mail.m", :password => "rubyruby", :password_confirmation => "rubyruby", :gender => "male", :seeking_gender => "female", :age => 44)
 User.create(:email => "user2@mail.m", :password => "rubyruby", :password_confirmation => "rubyruby", :gender => "male", :seeking_gender => "female", :age => 44)
