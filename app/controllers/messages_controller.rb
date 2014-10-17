@@ -4,12 +4,7 @@ class MessagesController < ApplicationController
 	def index
 		@messages = Message.all
 
-    	respond_to do |format|
-      		format.html {
-        		render :layout
-      		}
-      	format.json { render json: @messages }
-    end
+    
 	end
 
 	def new
